@@ -37,7 +37,7 @@
                     {{-- <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal"> --}}
                     <div class="portfolio-item mx-auto">
 
-                        <img class="img-fluid" src="/img/portfolio/{{ $tecnologia->imagem }}" title="{{ $tecnologia->nome }}" />
+                        <img class="img-fluid" src="/img/tecnologias/{{ $tecnologia->imagem }}" title="{{ $tecnologia->nome }}" />
                     </div>
                 </div>
             @endforeach
