@@ -7,7 +7,10 @@
         <meta name="author" content="" />
         <title>Rodrigo Affonso - desenvolvedor</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        {{-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> --}}
+        <link rel="icon" type="image/png" sizes="16x16"  href="/img/favicon-16x16.png">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
