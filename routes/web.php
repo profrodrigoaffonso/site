@@ -22,5 +22,8 @@ use App\Http\Controllers\LoginController;
 // });
 
 Route::get('/', [SiteController::class, 'index'])->name('site.index');
+Route::post('/enviar', [SiteController::class, 'enviar'])->name('site.enviar');
+
+
 Route::get('/login', [LoginController::class, 'index'])->name('login.index');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.login');

@@ -20,7 +20,7 @@
     </div>
 </header>
 <!-- Portfolio Section-->
-<section class="page-section portfolio" id="portfolio">
+<section class="page-section portfolio" id="tecnologias">
     <div class="container">
         <!-- Portfolio Section Heading-->
         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Tecnologias</h2>
@@ -75,7 +75,7 @@
 <section class="page-section" id="contact">
     <div class="container">
         <!-- Contact Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contato</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
@@ -92,31 +92,32 @@
                 <!-- To make this form functional, sign up at-->
                 <!-- https://startbootstrap.com/solution/contact-forms-->
                 <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <form method="post" action="{{ route('site.enviar') }}">
+                    @csrf
                     <!-- Name input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                        <label for="name">Full name</label>
-                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                        <input required class="form-control" id="nome" name="nome" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                        <label for="name">Nome</label>
+                        <div class="invalid-feedback" data-sb-feedback="name:required">Preenchimento obrigatório.</div>
                     </div>
                     <!-- Email address input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                        <label for="email">Email address</label>
-                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                        <input required class="form-control" id="email" name="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                        <label for="email">E-mail</label>
+                        <div class="invalid-feedback" data-sb-feedback="email:required">Preenchimento obrigatório.</div>
+                        <div class="invalid-feedback" data-sb-feedback="email:email">Formato de E-mail inválido.</div>
                     </div>
                     <!-- Phone number input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                        <label for="phone">Phone number</label>
+                        <input class="form-control" id="celular" name="celular" type="tel" placeholder="(123) 456-7890" />
+                        <label for="phone">Celular</label>
                         <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                     </div>
                     <!-- Message input-->
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                        <label for="message">Message</label>
-                        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                        <textarea required class="form-control" id="mensagem" name="mensagem" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                        <label for="message">Mensagem</label>
+                        <div class="invalid-feedback" data-sb-feedback="message:required">Preenchimento obrigatório.</div>
                     </div>
                     <!-- Submit success message-->
                     <!---->
@@ -136,7 +137,7 @@
                     <!-- an error submitting the form-->
                     <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                     <!-- Submit Button-->
-                    <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
+                    <button class="btn btn-primary btn-xl" type="submit">Enviar</button>
                 </form>
             </div>
         </div>
