@@ -27,3 +27,12 @@ Route::post('/enviar', [SiteController::class, 'enviar'])->name('site.enviar');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login.index');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
+
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+
+    Route::get('/', function(){
+        return view('admin.dashboard');
+    })->name('admin.dashboard.index');
+
+});
