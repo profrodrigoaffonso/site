@@ -25,8 +25,12 @@ class SiteController extends Controller
         dd($dados);
     }
 
-    public function cep($cep)
+    public function cep(Request $request)
     {
+
+        $dados = $request->all();
+
+        $dados['cep'] = preg_replace("/[^0-9]/", "", $dados['cep']);;
 
         // $response = Cep::consultaCep($cep);
 
@@ -35,7 +39,7 @@ class SiteController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://localhost:8000?cep=' . $cep,
+            CURLOPT_URL => 'http://localhost:8000?cep=' . $dados['cep'],
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -47,9 +51,19 @@ class SiteController extends Controller
 
         $response = json_decode(curl_exec($curl));
 
+        $trata_endereco = explode('-', $response[0]);
+        $response[0] = trim($trata_endereco[0]);
+
+        $trata_bairro = explode('(', $response[1]);
+        $response[1] = trim($trata_bairro[0]);
+
+        $cidade_uf = explode('/', $response[2]);
+        $response[2] = $cidade_uf[0];
+        $response[4] = $cidade_uf[1];
+
 
         curl_close($curl);
-        dd($response);
+        return ($response);
 
     }
 }

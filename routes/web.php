@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ClientesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,5 +35,10 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/', function(){
         return view('admin.dashboard');
     })->name('admin.dashboard.index');
+
+    Route::prefix('clientes')->group(function () {
+        Route::get('/create', [ClientesController::class, 'create'])->name('admin.clientes.create');
+        Route::post('/store', [ClientesController::class, 'store'])->name('admin.clientes.store');
+    });
 
 });

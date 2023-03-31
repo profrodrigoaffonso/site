@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('cep/{cep}', [SiteController::class, 'cep']);
+Route::post('cep', [SiteController::class, 'cep']);
