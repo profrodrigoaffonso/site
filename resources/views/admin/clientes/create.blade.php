@@ -4,7 +4,7 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Ponto</h1>
 </div>
-<form method="post" action="{{ route('admin.clientes.store') }}">
+<form method="post" action="{{ route('admin.clientes.store') }}" autocomplete="off">
     @csrf
     @component('components.forms.input', [
         'id'        => 'nome',
@@ -73,6 +73,15 @@
     <button type="submit" class="btn btn-primary">Salvar</button>
 </form>
 <script>
+
+    var cep = document.getElementById('cep');
+    cep.addEventListener('input', function (e) {
+        var valor = e.target.value;
+        valor = valor.replace(/\D/g, ''); // remove tudo que não é número
+        valor = valor.replace(/^(\d{5})(\d)/g, '$1-$2'); // adiciona hífen após os primeiros cinco números
+        e.target.value = valor;
+    });
+
     function consultaCep(){
 
         cep = document.getElementById('cep').value;
@@ -97,5 +106,7 @@
 
 
     }
+
+
 </script>
 @endsection
