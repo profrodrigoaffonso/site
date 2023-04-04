@@ -119,6 +119,9 @@
                         <label for="message">Mensagem</label>
                         <div class="invalid-feedback" data-sb-feedback="message:required">Preenchimento obrigatório.</div>
                     </div>
+                    @if(session('mensagem'))
+                        <h5 class="text-center" style="color: #f00">{{ session('mensagem') }}</h5>
+                    @endif
                     <!-- Submit success message-->
                     <!---->
                     <!-- This is what your users will see when the form-->

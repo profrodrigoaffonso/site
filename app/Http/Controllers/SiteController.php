@@ -26,7 +26,8 @@ class SiteController extends Controller
 
         SiteContato::create($dados);
 
-        dd($dados);
+        return redirect('/#contact')->with('mensagem', 'Enviado com sucesso!');
+
     }
 
     public function cep(Request $request)
