@@ -7808,8 +7808,17 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  /* background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important; */
+  background-image: url('/img/fundo_laptop.jpg');
+  background-size: cover;
 }
+
+.bg-primary-about {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+    /* background-image: url('/img/fundo_laptop.jpg'); */
+    background-size: cover;
+  }
 
 .bg-secondary {
   --bs-bg-opacity: 1;
