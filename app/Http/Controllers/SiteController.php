@@ -7,12 +7,16 @@ use Illuminate\Http\Request;
 use App\Models\Tecnologia;
 use App\Models\SiteContato;
 use App\Models\Cep;
+use App\Models\Contagem;
 
 class SiteController extends Controller
 {
     public function index()
     {
         $tecnologias = Tecnologia::lista();
+        Contagem::create([
+            'ip' => null
+        ]);
         return view('site.index', compact('tecnologias'));
     }
 
