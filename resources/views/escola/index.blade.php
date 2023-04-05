@@ -33,7 +33,7 @@
         <!-- Portfolio Grid Items-->
         <div class="row justify-content-center">
             @foreach ($aulas as $aula)
-            <div class="col-md-6 col-lg-6 mb-5">
+            <div class="col-md-6 col-lg-4 mb-5">
                 {{-- <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal"> --}}
                     <div class="tutorial container text-center my-5 ratio ratio-16x9">
                         <iframe src="https://www.youtube.com/embed/{{ $aula->video }}?rel=0"
