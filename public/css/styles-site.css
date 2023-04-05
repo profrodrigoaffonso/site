@@ -7813,6 +7813,13 @@ textarea.form-control-lg {
   background-size: cover;
 }
 
+.bg-primary-escola {
+    --bs-bg-opacity: 1;
+    /* background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important; */
+    background-image: url('/img/fundo_sala.jpg');
+    background-size: cover;
+}
+
 .bg-primary-about {
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
