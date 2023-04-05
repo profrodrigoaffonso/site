@@ -16,7 +16,7 @@
             <div class="divider-custom-line"></div>
         </div>
         <!-- Masthead Subheading-->
-        <p class="masthead-subheading font-weight-light mb-0">Analista Desenvolvedor</p>
+        <p class="masthead-subheading font-weight-light mb-0">Analista Desenvolvedor - Professor de Programação</p>
     </div>
 </header>
 <!-- Portfolio Section-->
