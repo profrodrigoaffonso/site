@@ -11,5 +11,5 @@ class Contagem extends Model
 
     protected $table = 'contagens';
 
-    protected $fillable = ['ip'];
+    protected $fillable = ['ip', 'pais', 'cidade'];
 }
