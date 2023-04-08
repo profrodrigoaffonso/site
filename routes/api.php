@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('cep', [SiteController::class, 'cep']);
+Route::get('ips', [SiteController::class, 'atualizaIp']);

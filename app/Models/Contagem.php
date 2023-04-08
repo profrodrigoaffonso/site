@@ -12,4 +12,9 @@ class Contagem extends Model
     protected $table = 'contagens';
 
     protected $fillable = ['ip', 'pais', 'cidade'];
+
+    public static function atualizaIp()
+    {
+        return self::select('id', 'ip')->where('cidade', null)->where('pais', null)->get();
+    }
 }
