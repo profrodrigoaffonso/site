@@ -11,7 +11,7 @@ class Contagem extends Model
 
     protected $table = 'contagens';
 
-    protected $fillable = ['ip', 'pais', 'cidade'];
+    protected $fillable = ['ip', 'tipo', 'pais', 'cidade'];
 
     public static function atualizaIp()
     {

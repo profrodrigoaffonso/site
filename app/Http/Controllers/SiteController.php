@@ -15,7 +15,8 @@ class SiteController extends Controller
     {
         $tecnologias = Tecnologia::lista();
         Contagem::create([
-            'ip' => $_SERVER ['REMOTE_ADDR']
+            'ip' => $_SERVER ['REMOTE_ADDR'],
+            'tipo'  => 'S'
         ]);
         return view('site.index', compact('tecnologias'));
     }
