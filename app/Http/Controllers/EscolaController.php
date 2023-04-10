@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Aula;
+use App\Models\Contagem;
 
 class EscolaController extends Controller
 {
