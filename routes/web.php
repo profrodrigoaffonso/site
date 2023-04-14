@@ -6,6 +6,7 @@ use App\Http\Controllers\SiteController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\EscolaController;
+use App\Http\Controllers\EmailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::post('/enviar', [SiteController::class, 'enviar'])->name('site.enviar');
 Route::get('/login', [LoginController::class, 'index'])->name('login.index');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
+Route::get('/email', [EmailController::class, 'teste'])->name('login.teste');
 
 Route::get('/escola', [EscolaController::class, 'index'])->name('escola.index');
 
