@@ -17,7 +17,7 @@
         </div>
         <!-- Masthead Subheading-->
         <p class="masthead-subheading font-weight-light mb-0">Analista Desenvolvedor - Professor de Programação</p>
-        <p class="masthead-subheading font-weight-light mb-0"><a style="color: #fff" href="{{ $links[0]['link'] }}" target="_blank">{{ $links[0]['texto'] }}</a></p>
+        <p class="masthead-subheading font-weight-light mb-0"><a onclick="onClick({{ $links[0]['id'] }})" style="color: #fff" href="{{ $links[0]['link'] }}" target="_blank">{{ $links[0]['texto'] }}</a></p>
     </div>
 </header>
 <!-- Portfolio Section-->
@@ -147,4 +147,22 @@
         </div>
     </div>
 </section>
+<script type="text/javascript">
+    function onClick(id){
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // código a ser executado em caso de sucesso
+                // console.log(this.status)
+            } else if (this.readyState == 4 && this.status != 200) {
+                // código a ser executado em caso de erro
+            }
+        };
+        xhttp.open("POST", "/api/contagem-link", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("id=" + id);
+    }
+
+</script>
 @endsection

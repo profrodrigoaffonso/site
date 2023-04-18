@@ -11,6 +11,6 @@ class Link extends Model
 
     public static function lista()
     {
-        return self::select('texto', 'imagem', 'link')->get()->toArray();
+        return self::select('id', 'texto', 'imagem', 'link')->get()->toArray();
     }
 }

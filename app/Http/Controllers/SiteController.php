@@ -9,6 +9,7 @@ use App\Models\SiteContato;
 use App\Models\Cep;
 use App\Models\Contagem;
 use App\Models\Link;
+use App\Models\ContagemLink;
 
 class SiteController extends Controller
 {
@@ -31,6 +32,20 @@ class SiteController extends Controller
         SiteContato::create($dados);
 
         return redirect('/#contact')->with('mensagem', 'Enviado com sucesso!');
+
+    }
+
+    public function contagemLink(Request $request)
+    {
+        $dados = $request->all();
+
+        ContagemLink::create([
+            'link_id'   => $dados['id'],
+            'ip'        => $_SERVER ['REMOTE_ADDR']
+
+        ]);
+
+        return true;
 
     }
 
