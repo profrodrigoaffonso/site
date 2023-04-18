@@ -17,6 +17,7 @@
         </div>
         <!-- Masthead Subheading-->
         <p class="masthead-subheading font-weight-light mb-0">Analista Desenvolvedor - Professor de Programação</p>
+        <p class="masthead-subheading font-weight-light mb-0"><a style="color: #fff" href="{{ $links[0]['link'] }}" target="_blank">{{ $links[0]['texto'] }}</a></p>
     </div>
 </header>
 <!-- Portfolio Section-->

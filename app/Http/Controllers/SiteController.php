@@ -8,17 +8,20 @@ use App\Models\Tecnologia;
 use App\Models\SiteContato;
 use App\Models\Cep;
 use App\Models\Contagem;
+use App\Models\Link;
 
 class SiteController extends Controller
 {
     public function index()
     {
         $tecnologias = Tecnologia::lista();
+        $links = Link::lista();
+        // dd($links);
         Contagem::create([
             'ip' => $_SERVER ['REMOTE_ADDR'],
             'tipo'  => 'S'
         ]);
-        return view('site.index', compact('tecnologias'));
+        return view('site.index', compact('tecnologias', 'links'));
     }
 
     public function enviar(Request $request)
