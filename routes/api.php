@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\ComandosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('cep', [SiteController::class, 'cep']);
 Route::post('contagem-link', [SiteController::class, 'contagemLink']);
+
+Route::get('atual', [ComandosController::class, 'atual']);
