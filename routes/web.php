@@ -20,7 +20,7 @@ use App\Http\Controllers\EmailController;
 */
 
 // Route::get('/', function () {
-//     return view('site.index');
+//     return view('site.index'); antigo
 
 // });
 
