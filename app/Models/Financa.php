@@ -9,5 +9,5 @@ class Financa extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['categoria', 'forma_pagamento', 'obs'];
+    protected $fillable = ['categoria', 'forma_pagamento', 'valor', 'obs'];
 }
