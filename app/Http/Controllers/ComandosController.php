@@ -15,9 +15,11 @@ class ComandosController extends Controller
 
         $dados = $request->all();
 
-        Financa::create($dados);
-
-        echo 'Salvo com sucesso!';
+        if($dados['token'] == env('TOKEN')){
+            unset($dados['token']);
+            Financa::create($dados);
+            echo 'Salvo com sucesso!';
+        }
 
     }
 
