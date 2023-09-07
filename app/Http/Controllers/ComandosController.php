@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\ComandoAtual;
 use App\Models\Contagem;
+use App\Models\Financa;
 
 class ComandosController extends Controller
 {
@@ -14,9 +15,9 @@ class ComandosController extends Controller
 
         $dados = $request->all();
 
-        print_r($dados);
+        Financa::create($dados);
 
-        // return "sss";
+        echo 'Salvo com sucesso!';
 
     }
 
