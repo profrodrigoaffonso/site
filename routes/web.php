@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\EscolaController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\ComandosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ use App\Http\Controllers\EmailController;
 
 Route::get('/', [SiteController::class, 'index'])->name('site.index');
 Route::post('/enviar', [SiteController::class, 'enviar'])->name('site.enviar');
+Route::get('/atualizar', [ComandosController::class, 'atualizar']);
 
 
 Route::get('/login', [LoginController::class, 'index'])->name('login.index');

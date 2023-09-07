@@ -25,3 +25,4 @@ Route::post('cep', [SiteController::class, 'cep']);
 Route::post('contagem-link', [SiteController::class, 'contagemLink']);
 
 Route::get('atual', [ComandosController::class, 'atual']);
+Route::post('financas', [ComandosController::class, 'financas']);
