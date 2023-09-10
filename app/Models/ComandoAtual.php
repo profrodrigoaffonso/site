@@ -11,6 +11,8 @@ class ComandoAtual extends Model
 
     protected $table = 'comandos_atuais';
 
+    protected $fillable = ['comando'];
+
     public static function atual()
     {
         return self::select('comando')->where('id', 1)->first();

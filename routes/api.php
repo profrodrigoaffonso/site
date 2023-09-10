@@ -26,3 +26,4 @@ Route::post('contagem-link', [SiteController::class, 'contagemLink']);
 
 Route::get('atual', [ComandosController::class, 'atual']);
 Route::post('financas', [ComandosController::class, 'financas']);
+Route::post('alterar', [ComandosController::class, 'alterarComando']);

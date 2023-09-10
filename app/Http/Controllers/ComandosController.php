@@ -12,22 +12,25 @@ class ComandosController extends Controller
 {
     public function financas(Request $request)
     {
-
         $dados = $request->all();
-
         if($dados['token'] == env('TOKEN')){
             unset($dados['token']);
             Financa::create($dados);
             echo 'Salvo com sucesso!';
         }
-
     }
 
     public function atual()
     {
         $comando = ComandoAtual::atual();
-
         return $comando->comando;
+    }
+
+    public function alterarComando(Request $request)
+    {
+        $dados = $request->all();
+        ComandoAtual::where('id', 1)->update($dados);
+        echo "Alterado com sucesso!";
     }
 
     public function atualizar(){
