@@ -14,9 +14,13 @@ class ComandosController extends Controller
     {
         $dados = $request->all();
         if($dados['token'] == env('TOKEN')){
-            unset($dados['token']);
-            Financa::create($dados);
-            echo 'Salvo com sucesso!';
+            if(!empty($dados['categoria'] and !empty($dados['forma_pagamento'] and !empty($dados['valor']) {                                                     
+                unset($dados['token']);
+                Financa::create($dados);
+                echo 'Salvo com sucesso!';
+            } else {
+                echo 'Preencha todos os dados!';      
+            }
         }
     }
 
