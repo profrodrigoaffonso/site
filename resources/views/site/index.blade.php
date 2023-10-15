@@ -16,7 +16,7 @@
             <div class="divider-custom-line"></div>
         </div>
         <!-- Masthead Subheading-->
-        <p class="masthead-subheading font-weight-light mb-0">Analistas Desenvolvedor - Professor de Programação</p>
+        <p class="masthead-subheading font-weight-light mb-0">Analista Desenvolvedor - Professor de Programação</p>
         <p class="masthead-subheading font-weight-light mb-0"><a onclick="onClick({{ $links[0]['id'] }})" style="color: #fff" href="{{ $links[0]['link'] }}" target="_blank">{{ $links[0]['texto'] }}</a></p>
     </div>
 </header>
