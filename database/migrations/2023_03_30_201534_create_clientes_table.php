@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
+            $table->string('uuid', 60)->unique();
             $table->string('nome', 200);
             $table->string('endereco', 200);
             $table->string('numero', 20);
-            $table->string('complemento', 20);
+            $table->string('complemento', 20)->nullable();
+            $table->string('bairro', 200);
             $table->string('cidade', 200);
             $table->string('uf', 2);
             $table->string('cep', 8);

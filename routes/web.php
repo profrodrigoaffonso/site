@@ -44,8 +44,11 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     })->name('admin.dashboard.index');
 
     Route::prefix('clientes')->group(function () {
+        Route::get('/', [ClientesController::class, 'index'])->name('admin.clientes.index');
         Route::get('/create', [ClientesController::class, 'create'])->name('admin.clientes.create');
         Route::post('/store', [ClientesController::class, 'store'])->name('admin.clientes.store');
+        Route::get('/{uuid}/edit', [ClientesController::class, 'edit'])->name('admin.clientes.edit');
+        Route::put('/update', [ClientesController::class, 'update'])->name('admin.clientes.update');
     });
 
 });

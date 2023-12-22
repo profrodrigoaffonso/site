@@ -4,8 +4,15 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Clientes</h1>
 </div>
-<form method="post" action="{{ route('admin.clientes.store') }}" autocomplete="off">
+<form method="post" action="{{ route('admin.clientes.update') }}" autocomplete="off">
     @csrf
+    @method('PUT')
+    @component('components.forms.hidden', [
+        'id'        => 'uuid',
+        'name'      => 'uuid',
+        'value'     => $cliente->uuid,
+    ])
+    @endcomponent
     <div class="row">
         <div class="col-8">
             @component('components.forms.input', [
@@ -13,8 +20,8 @@
                 'name'      => 'nome',
                 'label'     => 'Nome',
                 'type'      => 'text',
-                'value'     => old('nome'),
-                'maxlength' => 200
+                'value'     => $cliente->nome,
+                'maxlength' => 100
             ])
             @endcomponent
         </div>
@@ -24,7 +31,7 @@
                 'name'      => 'cep',
                 'label'     => 'CEP',
                 'type'      => 'text',
-                'value'     => old('cep'),
+                'value'     => $cliente->cep,
                 'maxlength' => 9,
                 'extra'     => 'onblur=consultaCep()'
             ])
@@ -38,7 +45,7 @@
                 'name'      => 'endereco',
                 'label'     => 'Endereço',
                 'type'      => 'text',
-                'value'     => old('endereco'),
+                'value'     => $cliente->endereco,
                 'maxlength' => 200
             ])
             @endcomponent
@@ -49,6 +56,7 @@
                 'name'      => 'numero',
                 'label'     => 'Número',
                 'type'      => 'text',
+                'value'     => $cliente->numero,
                 'maxlength' => 20
             ])
             @endcomponent
@@ -59,6 +67,7 @@
                 'name'      => 'complemento',
                 'label'     => 'Complemento',
                 'type'      => 'text',
+                'value'     => $cliente->complemento,
                 'maxlength' => 20
             ])
             @endcomponent
@@ -71,7 +80,7 @@
                 'name'      => 'bairro',
                 'label'     => 'Bairro',
                 'type'      => 'text',
-                'value'     => old('bairro'),
+                'value'     => $cliente->bairro,
                 'maxlength' => 200
             ])
             @endcomponent
@@ -82,7 +91,7 @@
                 'name'      => 'cidade',
                 'label'     => 'Cidade',
                 'type'      => 'text',
-                'value'     => old('cidade'),
+                'value'     => $cliente->cidade,
                 'maxlength' => 200
             ])
             @endcomponent
@@ -93,14 +102,12 @@
                 'name'      => 'uf',
                 'label'     => 'UF',
                 'type'      => 'text',
-                'value'     => old('uf'),
+                'value'     => $cliente->uf,
                 'maxlength' => 2
             ])
             @endcomponent
         </div>
     </div>
-
-
 
     <button type="submit" class="btn btn-primary">Salvar</button>
 </form>
