@@ -51,7 +51,7 @@ class SiteController extends Controller
 
     public function cep(Request $request)
     {
-        die;
+        // die;
 
         $dados = $request->all();
 
